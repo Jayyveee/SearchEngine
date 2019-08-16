@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title> Search Engine Application </title>
+<style type ="text/css">
+form{
+margin: 25%
+}
+.searching{
+  background-color: #999999;
+  padding: 20px;
+  margin-top: -80px
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  width: 50%;
+}
+input{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<h1 align = "center" color = "BLACK"> WELCOME To JAYVEEE Application</h1>
+
+<body>
+	<div class = "searching">
+	<form method="post" action="search_results.php">
+	 
+	<input type = "text" name = "query" placeholder = "Lemme help you.."/> <br>
+	<div align = "center">
+		<input type = "submit" name = "search" value = "Hunt now">
+		<input type = "submit" name = "clear" value = "Clear">
+	</div>
+	</form>
+	
+	</div>
+</body>
+</html>
