@@ -9,4 +9,4 @@ By this one have their customized search results and do the search actions in a 
 
 the insert.php and search_results.php files are the major files that contain the logic of the application.
 
-Here the picsto directory is used to save the images that are uploaded from the browser.
+Here the 'picsto' directory used in insert.php is used to save the images that are uploaded from the browser.
