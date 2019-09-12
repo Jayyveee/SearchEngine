@@ -60,7 +60,7 @@ td{
 	<?php
 		$server_name = "localhost";
 		$mysql_user = "root";
-		$mysql_pass = "root";
+		$mysql_pass = "";
 		$db_name = "search";
 		$conn = mysqli_connect($server_name,$mysql_user,$mysql_pass,$db_name);
 		if(!$conn) {
@@ -70,9 +70,8 @@ td{
 			echo "Database running successfully";
 		}
 		
-		if(!$db_select) {
-			die("Database selection failed: " . mysqli_error());
-		}
+		// if(!$db_select) {
+		//	die("Database selection failed: " . mysqli_error()); }
 		if(isset($_POST['submit'])){
 			$site_name = $_POST['site_name'];
 			$site_link = $_POST['site_link'];
@@ -82,12 +81,12 @@ td{
 			$site_image_tmp = $_FILES['site_image']['tmp_name'];
 				
 			
-		
-			$insert_query = "insert into sites(site_name,site_link,site_keywords,site_description,site_image) values('$site_name','$site_link','$site_keywords','$site_description','$site_image')";
-			move_uploaded_file($site_image_tmp,"Files/{$site_image}");
+			$insert_query = "INSERT INTO sites(site_name,site_link,site_keywords,site_description,site_image) VALUES('$site_name','$site_link','$site_keywords','$site_description','$site_image')";
+			$run = mysqli_query($conn,$insert_query);
+			move_uploaded_file($site_image_tmp,"picsto/{$site_image}");
 			
-			if(mysqli_query($insert_query)){
-				echo "<script> alert('WEBSITE DETAILS ADDED SUCCESSFULLY')</script>";
+			if($run){
+				echo "<script type='text/javascript'> alert('WEBSITE DETAILS ADDED SUCCESSFULLY'); </script>";
 			}
 
 		}

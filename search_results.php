@@ -34,12 +34,13 @@ input[type=submit] {
 	</form>
 	<?php 
 		$server_name = "localhost";
-		$mysql_user = "root";
-		$mysql_pass = "root";
+		$mysql_user = "Yaz";
+		$mysql_pass = "Govind";
 		$db_name = "search";
 		$conn = mysqli_connect($server_name,$mysql_user,$mysql_pass,$db_name);
 		
-		if(isset($_GET['Hunt Now'])){
+		if(isset($_GET['Hunt Now']))
+		{
 			$get_value = $_GET['query'];
 			
 			$result_query = "select * from sites where site_keywords like '%$get_value%'";
@@ -52,13 +53,16 @@ input[type=submit] {
 				$site_description = $row[$site_description];
 				$site_image = $row[$site_image];
 			}
-	<div class = "display">
+		}
+	?>
+
+	 <div class = "display">
 		<h2 align ="center">$site_name</h2>
 		<a href = '$site_link' target = '_blank'>$site_link</a>	// blank means opening in a new page
 		<p align = 'justify'> $site_description</p>
 		<img src = 'Files/$site_image' width = '100' >
 	</div>
-	?>
+
 	
 </body>
 </html>
