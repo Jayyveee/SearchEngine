@@ -34,8 +34,8 @@ input[type=submit] {
 	</form>
 	<?php 
 		$server_name = "localhost";
-		$mysql_user = "Yaz";
-		$mysql_pass = "Govind";
+		$mysql_user = "root";
+		$mysql_pass = "";
 		$db_name = "search";
 		$conn = mysqli_connect($server_name,$mysql_user,$mysql_pass,$db_name);
 		
@@ -52,17 +52,16 @@ input[type=submit] {
 				// $site_keywords = $row[$site_keywords]; this line not required cuz we don't to show in the results part 
 				$site_description = $row[$site_description];
 				$site_image = $row[$site_image];
+
+
+				echo "<div class = 'display'>
+					<h2 align ='center'>$site_name</h2>
+					<a href = '$site_link' target = '_blank'>$site_link</a>	// blank means opening in a new page
+					<p align = 'justify'> $site_description</p>
+					<img src = 'Files/$site_image' width = '100' height = '150' >
+				</div>";
 			}
 		}
 	?>
-
-	 <div class = "display">
-		<h2 align ="center">$site_name</h2>
-		<a href = '$site_link' target = '_blank'>$site_link</a>	// blank means opening in a new page
-		<p align = 'justify'> $site_description</p>
-		<img src = 'Files/$site_image' width = '100' >
-	</div>
-
-	
 </body>
 </html>
